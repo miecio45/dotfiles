@@ -1,0 +1,6 @@
+[submodule "vimconf"]
+	path = vimconf
+	url = https://github.com/timss/vimconf
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot

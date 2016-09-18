@@ -1,0 +1,59 @@
+let g:lightline = {
+            \ 'active': {
+            \     'left': [
+            \         ['mode', 'paste'],
+            \         ['readonly', 'fugitive'],
+            \         ['ctrlpmark', 'bufferline']
+            \     ],
+            \     'right': [
+            \         ['lineinfo'],
+            \         ['percent'],
+            \         ['fileformat', 'fileencoding', 'filetype', 'syntastic']
+            \     ]
+            \ },
+            \ 'component': {
+            \   'readonly': '%{&readonly?"X":""}', 
+            \   'paste': '%{&paste?"Paste":""}'
+            \ },
+            \ 'component_function': {
+            \     'mode'         : 'MyMode',
+            \     'fugitive'     : 'MyFugitive',
+            \     'readonly'     : 'MyReadonly',
+            \     'ctrlpmark'    : 'CtrlPMark',
+            \     'bufferline'   : 'MyBufferline',
+            \     'fileformat'   : 'MyFileformat',
+            \     'fileencoding' : 'MyFileencoding',
+            \     'filetype'     : 'MyFiletype'
+            \ },
+            \ 'component_expand': {
+            \     'syntastic': 'SyntasticStatuslineFlag',
+            \ },
+            \ 'component_type': {
+            \     'syntastic': 'middle',
+            \ },
+            \ 'subseparator': {
+            \     'left': '|', 'right': '|'
+            \ }
+            \ }
+
+        let g:lightline.mode_map = {
+            \ 'n'      : ' Normal ',
+            \ 'i'      : ' Insert ',
+            \ 'R'      : ' Replace ',
+            \ 'v'      : ' Visual ',
+            \ 'V'      : 'V-L',
+            \ 'c'      : ' C ',
+            \ "\<C-v>" : 'V-B',
+            \ 's'      : ' S ',
+            \ 'S'      : 'S-L',
+            \ "\<C-s>" : 'S-B',
+            \ '?'      : '      ' }
+ map <F4> :NERDTreeToggle<CR>
+ map <F6> :<CR>
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+"let &colorcolumn="80,".join(range(120,999),",")
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_python_checkers = ['flake8', 'python']
+colorscheme gruvbox
+set background=dark

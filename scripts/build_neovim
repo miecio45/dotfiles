@@ -1,0 +1,15 @@
+#!/bin/bash
+APT_GET_CMD=$(which apt-get)
+  YAOURT_CMD=$(which yaourt)
+ if [[ ! -z $APT_GET_CMD ]]; then
+    apt-get install libtool autoconf automake cmake g++ pkg-config unzip git
+    git clone https://github.com/neovim/neovim
+    cd neovim
+    make;
+    sudo make install
+ elif [[ ! -z $YAOURT_CMD ]]; then
+    yaourt -S neovim-git --noconfirm
+ else
+    echo "error can't install package $PACKAGE"
+    exit 1;
+ fi
