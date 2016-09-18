@@ -1,0 +1,7 @@
+#!/bin/bash
+source ~/.bash-git-prompt/gitprompt.sh
+GIT_PROMPT_ONLY_IN_REPO=0
+GIT_PROMPT_SHOW_UPSTREAM=0
+GIT_PROMPT_THEME=Single_line
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
