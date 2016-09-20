@@ -6,4 +6,17 @@ GIT_PROMPT_THEME=Single_line
 
 source /usr/share/git/completion/git-completion.bash
 
+venv () {
+    if [[ -f ./venv/bin/activate ]]; then
+        . ./venv/bin/activate
+        echo "[  OK   ] Activate venv"
+        return 0
+    else
+        echo "[ ERROR ] Missing venv dir"
+        return 1
+    fi
+
+}
+
+
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
